@@ -4,6 +4,33 @@ import random
 #seperator function
 def seperator():
     print("----------------------------------------")
+#ask to go fishing
+def fishornah():
+    pushingpositivity = input("Would you like to keep fishing? (Y/N)\n")
+    if pushingpositivity == 'y' or 'Y':
+        fishing()
+    else:
+        titleornah()
+#activity function
+def fishing():
+    seperator()
+    option3 = ("marlin", "shark", "sardine", "tuna", "seasnake")
+    collection = random.choice(option3)
+    if collection == 'marlin':
+        value = random.randint(200, 400)
+        print(f"Wow! you caught a {value} pound marlin!")
+    elif collection == 'shark':
+        value = random.randint(85, 525)
+        print(f"Wow! you caught a {value} pound shark!")
+    elif collection == 'sardine':
+        print("Tough luck, you caught a 3-gram sardine")
+    elif collection == 'tuna':
+        value = random.randint(79, 1800)
+        print(f"You caught a {value} pound tuna!")
+    elif collection == 'seasnake':
+        print("Tough luck, it was very venomous and it bit you. You died in the hospital")
+        exit()
+    fishornah()
 #python valley function   
 def pythonvalley():
     print("Hello and welcome to Python Valley, where it is not a terminal version of stardew valley.")
@@ -30,35 +57,18 @@ def pythonvalley():
         if job == "a":
             seperator()
             print("You work there for a solid 2 decades while rising up the ranks eventually becoming CEO and retiring rich at the age of 40\nBEST ENDING")
-            titleornah()
         elif job == "b":
             seperator()
             print("You work there for a solid 4 months before being fired due to inflation. You are now homeless because your already unsustainable job pay was barely enough to pay rent and die on the streets due to hypothermia.\n WOEST ENDING")
-            titleornah()
         elif job == "c":
             seperator()
             print("You foresaw the success of a whole generation of kids and they turn the already modern landscape into a eutopian society filled with drones, skyscrapers, and etc. You didn't do anything special individually, but you helped this society learn and turn into what it is now\n Neutral Ending")
-            titleornah()
     elif option2 == "b":
-            seperator()
-            option3 = ("marlin", "shark", "sardine", "tuna", "seasnake")
-            collection = random.choice(option3)
-            if collection == 'marlin':
-                print("You caught a massive marlin and sold it for millions. You got rich off of that sale and invested that money into the stock market and got a secure life.\n GOOD ENDING")
-            if collection == 'shark':
-                print("You caught a medium-sized lemon shark and kept it as your pet. You become emotionally attached and live life together with the lemon shark.\n HAPPY ENDING")
-            if collection == 'sardine':
-                print("You caught a tiny sardine and kept it in a 5 gallon fish tank. You feed it everyday and you wake up with it to your bedside table.\n FREE GUY ENDING")
-            if collection == 'tuna':
-                print("You caught a large tuna and cooked some brilliant sushi. It was big enough to feed you for 3 weeks.\n SUSHI ENDING")
-            if collection == 'seasnake':
-                print("You caught a highly venomous sea-snake and it bit you as you tried to get it away from you. You were rushed to the ER but they couldn't save you.\n HORRIBLE ENDING")
-                exit()
-            titleornah()
+        fishing()
     elif option2 == "c":
-            seperator()
-            print("You had very nice neighbors and they all greeted you and welcomed you into their home\nMEH ENDING")
-            titleornah()
+        seperator()
+        print("You had very nice neighbors and they all greeted you and welcomed you into their home\nMEH ENDING")
+    titleornah()
 #TicTacToe
 def rockpaperscissors():
     options = ("rock", "paper", "scissors")
