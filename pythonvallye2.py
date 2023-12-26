@@ -38,14 +38,20 @@ def activity():
     option2 = input("Now what will you do?\na. Find a job\nb. Go fishing\nc. Meet your neighbors\n")
     if option2 == "a":
         seperator()
-        job = input("You have multiple job offers, which one do you take?\na. A paid internship at a software firm where the pay is 30 dollars per hour\nb. Retail worker with 23 dollars per hour\nc. Teaching job that pays horrible but boosts social stats and work ethic\n")
+        job = input("You have multiple job offers, which one do you take?\na. A paid internship at a software firm where the pay is 30 dollars per hour\nb. Retail worker with 7 dollars per hour\nc. Teaching job that pays horrible but boosts social stats and work ethic\n")
         if job == "a":
             seperator()
-            time = random.randint(1, 7)
-            money = (30*time)
-            wallet += 30*time
-            print(f"You worked {time} hours and earned {money} dollars. You now have {wallet} dollars in your wallet")
-            activity()
+            chance = random.randint(1, 5)
+            if chance == 1:
+                print("You got hired for a one-day internship. You can reapply later on.")
+                time = random.randint(1, 7)
+                money = (30*time)
+                seperator()
+                print(f"You worked {time} hours and earned {money} dollars. Your internship has ended")
+            else:
+                print("You didn't make the internship. You can always reapply, though.")
+                seperator()
+                activity()
         elif job == "b":
             seperator()
             activity()
