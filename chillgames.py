@@ -56,7 +56,9 @@ def pythonvalley():
         job = input("You have multiple job offers, which one do you take?\na. A paid internship at a software firm where the pay is 30 dollars per hour\nb. Retail worker with 23 dollars per hour\nc. Teaching job that pays horrible but boosts social stats and work ethic\n")
         if job == "a":
             seperator()
-            print("You work there for a solid 2 decades while rising up the ranks eventually becoming CEO and retiring rich at the age of 40\nBEST ENDING")
+            hours = random.randint(1, 8)
+            pay = 30*hours
+            print("You worked there for {hours} hours and earned {pay} dollars")
         elif job == "b":
             seperator()
             print("You work there for a solid 4 months before being fired due to inflation. You are now homeless because your already unsustainable job pay was barely enough to pay rent and die on the streets due to hypothermia.\n WOEST ENDING")
