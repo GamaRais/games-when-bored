@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 
 window = Tk()
-window.geometry("400x900") 
+window.geometry("1920x1080") 
 window['background'] = '#142345'
 
 icon = PhotoImage(file= 'headphone.png')
@@ -17,22 +17,25 @@ def saveFile():
     file.write(filetext)
     file.close()
 
+def enterer(event):
+    listbox.insert(listbox.size(), entry.get())
+
 def deleter(event):
     listbox.delete(listbox.curselection())
 
 def delete():
     listbox.delete(listbox.curselection())
 
-window.bind("<Return>", deleter)
+window.bind("<BackSpace>", deleter)
+window.bind("<Return>", enterer)
 
 def submissions():
     listbox.insert(listbox.size(), entry.get())
 
-menubar = Menu(window)
+menubar = Menu(window, bg='#617fc2')
 window.config(menu=menubar)
-menubar['background'] = '#142345'
 
-fileMenu = Menu(menubar, tearoff=0)
+fileMenu = Menu(menubar, tearoff=0, bg='#617fc2')
 menubar.add_cascade(label="File",menu=fileMenu)
 fileMenu.add_command(label="Save", command=saveFile)
 fileMenu.add_command(label="Exit", command= excite)
