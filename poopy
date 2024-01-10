@@ -1,0 +1,65 @@
+from tkinter import *
+
+window = Tk()
+window.title("poopy")
+window.resizable(False, False)
+
+instruct = Label(window, text="Insert a name",font=("Consolas", 40))
+instruct.pack()
+
+frame = Frame(window)
+frame.pack(expand=True)
+
+name = Entry(frame, font=("Consolas", 40))
+name.pack()
+
+freddyimg = PhotoImage(file='z8pwdxks0za31.png')
+freddy = Label(image=freddyimg)
+
+def change():
+    global freddy
+    #nameExceptions = ("Gama", "gama", "Ceazar", "ceazar", "Arkin", "arkin", "Omar", "omar", "Kyle", "kyle")
+    #random.choices(nameExceptions)
+    nameget = name.get()
+    if nameget == "Gama" or nameget == "gama" or nameget == "Ceazar" or nameget == "ceazar" or nameget == "Arkin" or nameget == "arkin" or nameget == "Omar" or nameget == "omar" or nameget == "Kyle" or nameget == "kyle":
+        mohannad.config(text=f"{nameget} is a great man")
+        freddy.pack_forget()
+    elif nameget == "Ronaldo" or nameget== "ronaldo":
+        mohannad.config(text="Ronaldo is the GOAT")
+        freddy.pack_forget()
+    elif nameget == "Freddy" or nameget == "freddy":
+        mohannad.pack_forget()
+        freddy.pack()
+    elif nameget == "delete" or nameget == "Delete":
+        freddy.pack_forget()
+    else:
+        mohannad.config(text=f"{nameget} is a poopyhead")
+        freddy.pack_forget()
+
+def changes(events):
+    global freddy
+    nameget = name.get()
+    if nameget == "Gama" or nameget == "gama" or nameget == "Ceazar" or nameget == "ceazar" or nameget == "Arkin" or nameget == "arkin" or nameget == "Omar" or nameget == "omar" or nameget == "Kyle" or nameget == "kyle":
+        mohannad.config(text=f"{nameget} is a great man")
+        freddy.pack_forget()
+    elif nameget == "Ronaldo" or nameget== "ronaldo":
+        mohannad.config(text="Ronaldo is the GOAT")
+        freddy.pack_forget()
+    elif nameget == "Freddy" or nameget == "freddy":
+        mohannad.config(text='')
+        freddy.pack()
+    elif nameget == "delete" or nameget == "Delete":
+        freddy.pack_forget()
+    else:
+        mohannad.config(text=f"{nameget} is a poopyhead")
+        freddy.pack_forget()
+
+mohannad = Label(window, font=("Consolas", 40))
+mohannad.pack()
+
+window.bind("<Return>", changes)
+
+enter_button = Button(window, text="Enter", font=("Consolas", 40), command=change)
+enter_button.pack(side=BOTTOM)
+
+window.mainloop()
